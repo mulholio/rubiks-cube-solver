@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 type color int
@@ -16,6 +17,9 @@ const (
 )
 
 /*
+A matrix of faces, representing a cube. Each face is a 3x3 matrix of colour
+values
+
 We number the faces of the cube like so:
 
     1
@@ -24,7 +28,22 @@ We number the faces of the cube like so:
     6
 
 */
-type Cube = [6][3][3]color
+type Cube [6][3][3]color
+
+func (c Cube) String() string {
+	var res string
+	for _, face := range c {
+		for _, row := range face {
+			for _, color := range row {
+				res += strconv.Itoa(int(color))
+				res += " "
+			}
+			res += "\n"
+		}
+		res += "\n"
+	}
+	return res
+}
 
 var c = Cube{
 	{{R, R, R},
