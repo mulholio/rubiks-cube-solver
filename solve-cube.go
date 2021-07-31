@@ -34,6 +34,7 @@ We number the faces of the cube like so:
 */
 type Cube [6][3][3]color
 
+// Formats the cube as a net with the faces numbered as above
 func (c Cube) String() string {
 	var res string
 
