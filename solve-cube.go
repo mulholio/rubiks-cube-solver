@@ -15,6 +15,15 @@ const (
 	O
 )
 
+/*
+We number the faces of the cube like so:
+
+    1
+  2 3 4
+    5
+    6
+
+*/
 type Cube = [6][3][3]color
 
 var c = Cube{
